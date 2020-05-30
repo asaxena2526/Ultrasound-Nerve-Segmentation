@@ -138,7 +138,7 @@ def plot_learning_curve(train_losses,valid_losses):
 
 if __name__ == '__main__':
 
-	df = pd.read_csv('./train_masks.csv')
+	df = pd.read_csv('../data-samples/train_masks.csv')
 	df['sample_type'] = 'train'
 
 	sample_idx = df.sample(frac=0.2, random_state=42).index
@@ -175,7 +175,7 @@ if __name__ == '__main__':
 
 	use_cuda = True
 	if use_cuda and torch.cuda.is_available():
-	  print('yes')
+		print('yes')
 	print(torch.cuda.is_available())
 
 
@@ -184,7 +184,7 @@ if __name__ == '__main__':
 	model = Unet(1,net_type='semi_inception',version='b',add_residual=True)
 	
 	if use_cuda and torch.cuda.is_available():
-	  model.cuda()
+		model.cuda()
 	
 	criterion = CustomLoss(0.5,1)
 
@@ -195,6 +195,6 @@ if __name__ == '__main__':
 
 	# save model for further use
 
-	torch.save(model.state_dict(),'./saved_models/Mymodel')
+	torch.save(model.state_dict(),'../Mymodel')
 
 

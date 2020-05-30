@@ -75,7 +75,7 @@ model.load_state_dict(torch.load('./saved_model')) # Load trained model
 
 
 if use_cuda and torch.cuda.is_available():
-  model.cuda()
+	model.cuda()
 
 transforms_valid = A.Compose([
     A.Resize(height=512, width=512, p=1.0),

@@ -32,7 +32,7 @@ for i in range(len(mask_df)):
 	image_path = str(mask_df['subject'][i])+'_'+str(mask_df['img'][i])
 	mask_path = image_path+'_mask'
 	np.save('../data_train/'+image_path,np.array(Image.open('../train/'+image_path+'.tif')))
-  	np.save('../data_train/'+mask_path,rle_to_image(mask_df['pixels'][i]))
+	np.save('../data_train/'+mask_path,rle_to_image(mask_df['pixels'][i]))
 
 # Submission samples
 
@@ -42,4 +42,4 @@ for i in range(len(df)):
 	image_path = str(df['img'][i])
 	mask_path = image_path+'_mask'
 	np.save('../data_test/'+image_path,np.array(Image.open('../test/'+image_path+'.tif')))
-  	np.save('../data_test/'+mask_path,rle_to_image(0))
+	np.save('../data_test/'+mask_path,rle_to_image(0))

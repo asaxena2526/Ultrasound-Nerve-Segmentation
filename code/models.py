@@ -94,12 +94,12 @@ class residual(nn.Module):
 
 	def forward(self,x):
 		if not self.req:
-		  return x
+			return x
 
 		res = self.conv(x)*self.scale
 		x = res+x
 		if self.actv:
-		  x = self.actv(x,inplace=True)
+			x = self.actv(x,inplace=True)
 
 		return x
 
@@ -110,22 +110,22 @@ class Unet(nn.Module):
 		assert net_type in ['normal','semi_inception','inception'] 
 		self.actv = None
 		if activation == 'relu':
-		  self.actv = F.leaky_relu
+			self.actv = F.leaky_relu
 		else:
-		  self.actv = F.elu
+			self.actv = F.elu
 
 
 		Conv1 = None
 		Conv2 = None
 		if net_type == 'normal':
-		  Conv1 = NConv2d
-		  Conv2 = NConv2d
+			Conv1 = NConv2d
+			Conv2 = NConv2d
 		elif net_type == 'semi_inception':
-		  Conv1 = inception_block
-		  Conv2 = NConv2d
+			Conv1 = inception_block
+			Conv2 = NConv2d
 		elif net_type == 'inception':
-		  Conv1 = inception_block
-		  Conv2 = inception_block
+			Conv1 = inception_block
+			Conv2 = inception_block
 
 		self.conv1_1 = Conv1(in_c,64,3,1,1,self.actv,version)
 		self.conv1_2 = Conv2(64,64,3,1,1,self.actv,version)
