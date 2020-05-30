@@ -3,7 +3,6 @@ from dataset import Ultrasound_Dataset
 from loss_function import CustomLoss
 import sklearn.metrics as met
 from statistics import mean
-import torch 
 import copy
 import torch
 from torch import nn , optim
