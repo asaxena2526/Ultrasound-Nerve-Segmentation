@@ -31,7 +31,7 @@ scikit_learn == 0.22.1
 # Ultrasound-Nerve-Segmentation/code/models.py: 2,4
 # Ultrasound-Nerve-Segmentation/code/submission.py: 4,6
 # Ultrasound-Nerve-Segmentation/code/training.py: 18
-torch == 1.4.0+cpu
+torch == 1.13.1
 
 # Ultrasound-Nerve-Segmentation/code/dataset.py: 1
 # Ultrasound-Nerve-Segmentation/code/loss_function.py: 3
